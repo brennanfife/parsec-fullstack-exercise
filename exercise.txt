@@ -1,0 +1,31 @@
+# Fullstack Engineering Task
+
+At parsec we primarily deal with taking onchain data and presenting it in a readable format. At the core of this is contracts in ethereum parlance. This task is meant to be an appetizer into the sort of data transformations we do. Since this is a fullstack role there is a backend API portion and a frontend portion that hooks up to the API
+
+**Backend Portion**
+
+With the programming language/tools of your choice create a REST or GraphQL API that reads out Ethereum contract data and has the following properties.
+
+1) Accepts 3 parameters
+
+- A contract address of the form 0xabc…789, e.g. the USDT contract address ([https://etherscan.io/address/0xdac17f958d2ee523a2206206994597c13d831ec7](https://etherscan.io/address/0xdac17f958d2ee523a2206206994597c13d831ec7))
+- a “function” to call, for example with USDT it could be any of the functions in the read contract section [https://etherscan.io/address/0xdac17f958d2ee523a2206206994597c13d831ec7#readContract](https://etherscan.io/address/0xdac17f958d2ee523a2206206994597c13d831ec7#readContract)
+- an array of arguments that the function might require. For example if I wanted to know the USDT balance of an address I’d call `balanceOf`, with the 1 argument (the address I want to know the balance for)
+
+2) Returns the correct value
+
+- E.g. the USDT function `decimals` will return `6`, ideally these responses will be “human readable” and not in hexadecimals unless the return type is an address
+
+For an Ethereum RPC endpoint you can use an alchemy key we spun up [https://eth-mainnet.g.alchemy.com/v2/GLfjhndE2L3YJmb0-hDX635D-ioTIOD6](https://eth-mainnet.g.alchemy.com/v2/GLfjhndE2L3YJmb0-hDX635D-ioTIOD6).
+
+**Frontend Portion**
+
+Construct a simple form that: 
+
+- takes in the function name and the argument(s)
+- calls API for answer
+- returns the answer
+
+again this can be in any language/framework of choice/comfort!
+
+Only spend 3-4 hours on this task, if you write tests as part of your process include them, but they are not required. If you have time to spare extend in any way you’d like!
