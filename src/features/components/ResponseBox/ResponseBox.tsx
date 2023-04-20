@@ -2,7 +2,7 @@ import { Center, Link, Spinner, Text, VStack } from '@chakra-ui/react';
 import { utils } from 'ethers';
 
 import { IApiError } from '@/types';
-import { getEtherscanLink, shortenAddress } from '@/utils';
+import { getEtherscanLink, shortenAddress, truncateString } from '@/utils';
 
 export default function ResponseBox({
   data,
@@ -36,7 +36,7 @@ export default function ResponseBox({
           </VStack>
         ) : isError ? (
           <Text color="red.200" fontStyle="italic">
-            Error: {error && error.message}
+            Error: {error && truncateString(error.message)}
           </Text>
         ) : isInitialLoading ? (
           <Center w="100%" p="1rem">

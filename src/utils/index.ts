@@ -41,3 +41,7 @@ export function getEtherscanLink(
     }
   }
 }
+
+export function truncateString(string: string, length = 50) {
+  return string.length > length ? string.slice(0, length - 1) + '...' : string;
+}
