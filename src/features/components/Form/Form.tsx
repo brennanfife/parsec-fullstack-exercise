@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   ButtonGroup,
   Container,
@@ -27,11 +26,12 @@ export default function Form({ refetch }: { refetch: () => void }) {
     setFunc(defaultArgs.func);
     setArgs(defaultArgs.args);
   }
+
   return (
-    <Flex flex="1">
+    <Flex flex="1" order={{ base: 2, md: 1 }}>
       <Container
         maxW="md"
-        py="8"
+        py={{ base: '4', md: '8' }}
         px="10"
         bg="white"
         boxShadow="md"
@@ -43,7 +43,7 @@ export default function Form({ refetch }: { refetch: () => void }) {
             <Stack spacing="3" textAlign="center">
               <Heading size="md">Call Ethereum contract</Heading>
               <HStack justify="center" spacing="1">
-                <Text color="muted">Fill with default args?</Text>
+                <Text color="gray.500">Fill with default args?</Text>
                 <ButtonGroup>
                   <Button
                     variant="link"
@@ -68,7 +68,7 @@ export default function Form({ refetch }: { refetch: () => void }) {
             </Stack>
           </Stack>
           <Stack spacing="6">
-            <Stack spacing="5">
+            <Stack spacing={{ base: '2', md: '5' }}>
               <FormControl isRequired>
                 <FormLabel htmlFor="address">Address</FormLabel>
                 <Input
@@ -110,7 +110,7 @@ export default function Form({ refetch }: { refetch: () => void }) {
                   ))}
                 </VStack>
                 <HStack alignItems="center" justifyContent="space-between">
-                  <FormHelperText color="gray.500">
+                  <FormHelperText color="gray.500" my="0.5rem">
                     Click to add more parameters
                   </FormHelperText>
                   <ButtonGroup>

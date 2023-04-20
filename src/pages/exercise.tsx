@@ -1,4 +1,4 @@
-import { Box, Stack } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import { useQuery } from '@tanstack/react-query';
 
 import Form from '@/features/components/Form';
@@ -20,16 +20,20 @@ export default function Home() {
   });
 
   return (
-    <Box py="24" maxW="7xl" mx="auto">
-      <Stack direction="row" spacing="12">
-        <Form refetch={refetch} />
-        <ResponseBox
-          data={data}
-          error={error}
-          isError={isError}
-          isInitialLoading={isInitialLoading}
-        />
-      </Stack>
-    </Box>
+    <Flex
+      direction={{ base: 'column', md: 'row' }}
+      m="auto"
+      h="100%"
+      alignItems="center"
+      maxW="7xl"
+    >
+      <Form refetch={refetch} />
+      <ResponseBox
+        data={data}
+        error={error}
+        isError={isError}
+        isInitialLoading={isInitialLoading}
+      />
+    </Flex>
   );
 }

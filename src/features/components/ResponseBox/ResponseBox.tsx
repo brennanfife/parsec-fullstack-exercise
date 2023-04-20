@@ -16,8 +16,8 @@ export default function ResponseBox({
   isInitialLoading: boolean;
 }) {
   return (
-    <Center flex="1" px="8">
-      <VStack spacing="8" fontSize="4xl" color="white">
+    <Center flex="1" px={{ base: '0', md: '8' }} order={{ base: 1, md: 2 }}>
+      <VStack spacing="8" fontSize={{ base: '2xl', md: '4xl' }} color="white">
         {data ? (
           <VStack>
             <Text>And your result:</Text>
